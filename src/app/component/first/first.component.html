@@ -1,0 +1,41 @@
+<!-- 
+<div class="userLogin-image">
+    <div class="userLogin-text">
+      <h2 style="font-size:50px">MLab CodeTribe</h2>
+      <hr>
+      <p>Mobile Application Development</p>
+
+      <div class="container">
+
+      <form  [formGroup] = "loginForm" (ngSubmit) = "submitMethod(loginForm)">
+        <h1 class="text-center">Sign in</h1>
+        <p><label> Username: </label>
+            <input placeholder="Username"  formControlName = 'username'>
+        </p>
+        <p>
+            <label class = "text-center">  Password:</label>
+            <input placeholder="Password" formControlName = 'password'>
+        <br>
+        <p><button type="submit">Submit</button></p>
+        </form>
+  </div>
+    </div>
+  </div>
+ -->
+ <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+  <mat-icon>more_vert</mat-icon>
+</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>
+    <mat-icon>dialpad</mat-icon>
+    <span>Redial</span>
+  </button>
+  <button mat-menu-item disabled>
+    <mat-icon>voicemail</mat-icon>
+    <span>Check voice mail</span>
+  </button>
+  <button mat-menu-item>
+    <mat-icon>notifications_off</mat-icon>
+    <span>Disable alerts</span>
+  </button>
+</mat-menu>

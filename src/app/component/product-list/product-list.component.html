@@ -1,0 +1,11 @@
+<h2>Products</h2>
+<h1>Product Listing</h1>
+<p>You can refer to line numbers when placing grid items.</p>
+<h1>Re-arange the Order on Small Devices</h1>
+  <div class ="container" *ngFor = "let product of products; index as productId">
+    <div [title] = "product.name + ' details'" [routerLink]="['/products',productId]">
+     <b style = "text-align: right;">{{  product.price | currency}}</b>
+      <p>{{ product.name }} </p>
+      <p>Description: {{ product.description }}</p><br>
+  </div>
+    </div> 

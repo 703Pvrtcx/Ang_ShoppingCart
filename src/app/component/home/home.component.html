@@ -1,0 +1,97 @@
+<!-- <!-- 
+
+
+<div class="flex-container">
+  <mat-card  *ngFor = "let product of items;">
+    <mat-card-content>
+     <b> {{ product.item }}: {{ product.name }}</b><b style="float: right;" color = "primary">{{  product.price | currency}}</b>
+     <hr>
+     
+      <mat-card>
+        <img class = "pic" style="box-sizing: content-box; " mat-card-image  [src] = "product.image"
+        alt ="A picture of {{product.name}}"/> 
+        <b>Description: {{ product.description }}</b>
+      </mat-card>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" style="float: right; width:100%;"  (click) = "addToCart(product)">Add To Cart
+        <mat-icon>add_shopping_cart</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div> -->
+
+
+<!-- <div class="flex-container" *ngFor = "let product of items;">
+  <div>
+      <img class="card-img-top"  [src] = "product.image" alt = "{{ product.name }}"  alt="Card image" style="width:100%">
+      <div class="card-body">
+        <h4 class="card-title">{{product.name}} | {{  product.price | currency}}</h4>
+        <p class="card-text">{{ product.description }}</p>
+        <a href="#" class="btn btn-primary"  (click) = "addToCart(product) ">See Profile <mat-icon>add_shopping_cart</mat-icon></a>
+      </div>
+    </div>
+</div> -->
+<!-- <div class = "container" style = "position:absolute;"> 
+  <button type="button" mat-button (click)= "drawer.toggle()">
+    Categories
+  </button>
+  <mat-drawer-container class="example-container" autosize>
+      <mat-drawer #drawer class="example-sidenav" mode="side">
+        <p>Auto-resizing sidenav</p>
+        <p *ngIf= "showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+        <button (click)="showFiller = !showFiller" mat-raised-button>
+          Toggle extra text
+        </button>
+      </mat-drawer>
+    <div class="example-sidenav-content"> 
+       <div class="flex-container" >
+        <div *ngFor = "let product of items;">
+          <mat-card>   
+            <mat-card-content>
+              {{product.name}}
+            <img class="card-img-top"  [src] = "product.image" alt = "{{ product.name }}"  alt="Card image" style="width:100%">
+          </mat-card-content>
+          </mat-card>
+        </div>
+      </div>
+    </div>
+  </mat-drawer-container>
+</div> -->
+<div class = "container" style="position: fixed;width: 100%; height: 100%; " >
+<mat-toolbar>
+  <ol class="breadcrumb"  style = "margin-top: 75px; height:15px">
+      <li><a  mat-button (click)= "drawer.toggle()">Categoties</a></li>
+     <li class="active"><a href="#">Order</a></li>
+     <li><a href="#">Payment</a></li> 
+   </ol>
+</mat-toolbar>
+<hr>
+
+<mat-drawer-container class="example-container" autosize  >
+     
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p>Auto-resizing sidenav</p>
+    <p *ngIf="showFiller"></p>
+   
+  </mat-drawer>
+          <div  class = "container">
+                <mat-card> 
+                        <div class="example-sidenav-content">
+                            <div class="flex-container" >
+                              <div *ngFor = "let product of items;">
+                                <mat-card>   
+                                  <mat-card-content>
+                                    {{product.name}}
+                                  <img class="card-img-top"  [src] = "product.image" alt = "{{ product.name }}"  alt="Card image" style="width:100%">
+                                </mat-card-content>
+                                </mat-card>
+                              </div>
+                            </div>
+                      </div>
+                 
+                  </mat-card>
+        </div>
+</mat-drawer-container> 
+</div>
+

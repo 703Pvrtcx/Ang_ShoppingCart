@@ -1,0 +1,46 @@
+<!--<app-top-bar></app-top-bar>-->
+<!-- Toolbar-->
+<!-- <mat-toolbar color="primary" class="app-header">
+  <mat-label routerLink ="home">   <a class="navbar-brand" href="#">Truxton Online Store</a></mat-label>
+
+ <a mat-button routerLink ="about" routerLinkActive="active">Admin</a>
+
+ <mat-icon>shopping_cart </mat-icon>
+  <span class="nav-tool-items">
+
+    <a mat-button routerLink ="sign-in" routerLinkActive="active">Log in</a>
+    <a mat-button mat-raised-button routerLink="register-user" routerLinkActive="active">Register</a>
+  </span>
+</mat-toolbar>  -->
+
+<mat-toolbar color="primary" class="app-header">
+  <button mat-button [matMenuTriggerFor]= "menu" style="float:left">Menu
+  <mat-icon>more_vert</mat-icon>
+</button>
+ 
+ 
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink ="home" routerLinkActive="active">Home</button>
+  <button mat-menu-item routerLink ="about" routerLinkActive="active">Add Item</button>
+  <button mat-menu-item routerLink ="sign-in" routerLinkActive="active">Login</button>
+  <button mat-menu-item routerLink="register-user" routerLinkActive="active">Register</button>
+</mat-menu>
+<input type="text" placeholder="Search.." name="search">
+<button type="submit"><i class="fa fa-search"></i></button>
+
+<mat-icon>shopping_cart</mat-icon>
+ <mat-label routerLink ="home"><a class="navbar-brand" href="#">Truxton Online Store</a></mat-label>
+</mat-toolbar>
+
+<app-dashboard></app-dashboard>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/7.20.0/firebase-app.js"></script>
+<script src="/__/firebase/7.20.0/firebase-auth.js"></script>
+<script src="/__/firebase/7.20.0/firebase-database.js"></script>
+<script src="/__/firebase/7.20.0/firebase-storage.js"></script>
+<script src="/__/firebase/7.20.0/firebase-hosting.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/7.20.0/firebase-analytics.js"></script>
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>

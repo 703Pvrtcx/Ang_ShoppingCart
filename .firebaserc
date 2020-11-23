@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "authapp-4002a": {
+      "hosting": {
+        "App": [
+          "authapp-4002a"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "authapp-4002a"
+  }
+}

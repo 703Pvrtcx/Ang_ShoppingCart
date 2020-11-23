@@ -1,0 +1,85 @@
+<!-- 
+<div class="header" >
+  <h1>Truxton</h1>
+  <p>A <b>Online</b> Shopping Store </p>
+
+  <div class="navbar">
+ <a >
+  <button mat-raised-button  (click)= "addItem()"> 
+   <mat-icon>add</mat-icon>Add Item
+ </button>
+</a>
+
+<a >
+  <button mat-raised-button  (click)= "openCart()" matBadgeSize="large" 
+  matBadgePosition="after" matBadgeColor="primary" matBadge= "{{ cart.length }}" >Cart
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+</a>
+
+
+ 
+  <a style="float: right;">
+   <button mat-raised-button  (click)= "openLogin()" color= "secondary">Signin
+    <mat-icon>login</mat-icon>
+  </button>
+</a>
+</div>
+
+</div>
+  <div class = "column" style="top: auto;"> 
+  <app-home></app-home>
+</div> -->
+
+
+<!-- <mat-toolbar color="primary" >
+  <button mat-button [matMenuTriggerFor]= "menu" style="float:left">Menu
+  <mat-icon>more_vert</mat-icon>
+</button>
+ 
+ 
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink ="home" routerLinkActive="active">Home</button>
+  <button mat-menu-item routerLink ="about" routerLinkActive="active">Add Item</button>
+  <button mat-menu-item routerLink ="sign-in" routerLinkActive="active">Login</button>
+  <button mat-menu-item routerLink="register-user" routerLinkActive="active">Register</button>
+</mat-menu>
+<input type="text" placeholder="Search.." name="search">
+<button type="submit"><i class="fa fa-search"></i></button>
+
+<mat-icon>shopping_cart </mat-icon>
+ <mat-label routerLink ="home"><a class="navbar-brand" href="#">Truxton Online Store</a></mat-label>
+</mat-toolbar> 
+
+-->
+
+<router-outlet></router-outlet>
+
+
+
+
+
+
+
+
+<!-- <div class = "container"> 
+  <button type="button" mat-button (click)="drawer.toggle()">
+    Categories
+  </button>
+  <mat-drawer-container class="example-container" autosize>
+      <mat-drawer #drawer class="example-sidenav" mode="side">
+        <p>Auto-resizing sidenav</p>
+        <p *ngIf= "showFiller">Lorem, ipsum dolor sit amet consectetur.</p>
+        <button (click)="showFiller = !showFiller" mat-raised-button>
+          Toggle extra text
+        </button>
+      </mat-drawer>
+    <div class="example-sidenav-content"> 
+      <app-home></app-home>
+    </div>
+  </mat-drawer-container>
+</div> -->
+
+
+
+

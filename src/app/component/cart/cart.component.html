@@ -1,0 +1,425 @@
+<!-- <mat-card style = "margin-top: 100px;" class = "col" >
+     
+       
+        <mat-card-content class = "cart-item">
+          <span><b>Device Name</b></span>
+          <span><b>Price</b></span>
+          <span><b>Delete Item</b> </span>
+        </mat-card-content>
+       
+        <mat-card-content class = "cart-item" *ngFor = "let item of items;">
+            <span>{{ item.name}}</span>
+            <span>{{ item.price | currency }}</span>
+            <button (click) = "deleteItem(item.id)"><mat-icon color= "warn">delete</mat-icon></button>
+      </mat-card-content> 
+      <mat-card-content class = "cart-item" >
+        
+        <span><b>Total:</b></span>
+     
+
+        <span style = "float: right;"><b>
+          {{ getTotalCost() | currency }}</b> 
+      </span> 
+      </mat-card-content>
+    <mat-card>
+      <mat-card-content>
+       <mat-list>
+          <mat-list-item *ngFor= "let item of selectedItems" lines="inset"> 
+            {{ item.count }} x {{ item.name }} - {{ item.price | currency:'R':'symbol' }}
+            <mat-label text-right>{{ (item.price * item.count) | currency:'R':'symbol' }}</mat-label>
+    
+          </mat-list-item>
+          Total: <span >{{ total | currency:'R':'symbol' }}</span>
+       </mat-list>
+
+      </mat-card-content>
+    </mat-card>
+</mat-card>
+
+ -->
+<div class="container text-center">
+
+  <div class="col-md-5 col-sm-12">
+    <div class="bigcart"></div>
+    <h1>Your shopping cart</h1>
+    <p>
+      This is a free and <b><a href="http://tutorialzine.com/2014/04/responsive-shopping-cart-layout-twitter-bootstrap-3/" title="Read the article!">responsive shopping cart layout, made by Tutorialzine</a></b>. It looks nice on both desktop and mobile browsers. Try it by resizing your window (or opening it on your smartphone and pc).
+    </p>
+  </div>
+  
+  <div class="col-md-7 col-sm-12 text-left">
+    <ul>
+      <li class="row list-inline columnCaptions">
+        <span>QTY</span>
+        <span>ITEM</span>
+        <span>Price</span>
+      </li>
+      <li class="row">
+        <span class="quantity">1</span>
+        <span class="itemName">Birthday Cake</span>
+        <span class="popbtn"><a class="arrow"></a></span>
+        <span class="price">$49.95</span>
+      </li>
+      <li class="row">
+        <span class="quantity">50</span>
+        <span class="itemName">Party Cups</span>
+        <span class="popbtn"><a class="arrow"></a></span>
+        <span class="price">$5.00</span>
+      </li>
+      <li class="row">
+        <span class="quantity">20</span>
+        <span class="itemName">Beer kegs</span>
+        <span class="popbtn"><a class="arrow"></a></span>
+        <span class="price">$919.99</span>				
+      </li>
+      <li class="row">
+        <span class="quantity">18</span>
+        <span class="itemName">Pound of beef</span>
+        <span class="popbtn"><a class="arrow"></a></span>
+        <span class="price">$269.45</span>
+      </li>
+      <li class="row">
+        <span class="quantity">1</span>
+        <span class="itemName">Bullet-proof vest</span>
+        <span class="popbtn"  data-parent="#asd" data-toggle="collapse" data-target="#demo"><a class="arrow"></a></span>
+        <span class="price">$450.00</span>				
+      </li>
+      <li class="row totals">
+        <span class="itemName">Total:</span>
+        <span class="price">$1694.43</span>
+        <span class="order"> <a class="text-center">ORDER</a></span>
+      </li>
+    </ul>
+  </div>
+
+</div>
+
+<!-- The popover content -->
+<!-- 
+<div id="popover" style="display: none">
+  <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+  <a href="#"><span class="glyphicon glyphicon-remove"></span></a>
+</div> -->
+
+<!-- JavaScript includes -->
+
+<!-- <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script> 
+<script src="./../../assets/js/bootstrap.min.js"></script>
+<script src="assets/js/customjs.js"></script> -->
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+<!--
+<mat-card style = "margin-top: 100px;">
+<div class = "cart-item" *ngFor = "let item of items">
+  <span>{{ item.name}}</span>
+  <span>{{ item.price | currency }}</span>
+</div>
+
+
+  <mat-card style = "margin-top: 100px;" *ngFor = "let product of items;">
+    <h2>{{ product.item }}<b>: {{ product.name }} </b></h2>
+    <mat-card-content>
+      <mat-card>
+        <img mat-card-image  [src] = "product.image"
+        alt ="A picture of {{product.name}}"/>
+      </mat-card>
+    </mat-card-content>
+  </mat-card>
+
+<form [formGroup]= "checkoutForm" (ngSubmit) = "onSubmit(checkoutForm.value)">
+  <div> 
+
+    <mat-card style = "margin-top: 100px;" *ngFor = "let product of items;">
+      <h2>{{ product.item }}<b>: {{ product.name }} </b></h2>
+      <mat-card-content>
+        <mat-card>
+          <img mat-card-image  [src] = "product.image"
+          alt ="A picture of {{product.name}}"/>
+        </mat-card>
+      </mat-card-content>
+    </mat-card>
+
+
+      <label for="name">
+        Name
+      </label>
+      <input id="name" type="text" formControlName="name">
+    </div>
+  
+    <div>
+      <label for="address">
+        Address
+      </label>
+      <input id="address" type="text" formControlName="address">
+    </div>
+  <button class="button" type="submit">Purchase</button>
+</form>
+
+
+</mat-card>
+ 
+ <mat-card>
+  <mat-card-title>Shopping</mat-card-title>
+  <h3>Cart</h3>
+  <div class="container">
+    <div class="heading">
+      <h1>
+        <span class="shopper">s</span> Shopping Cart
+      </h1>
+      
+      <a href="#" class="visibility-cart transition is-open">X</a>    
+    </div>
+    
+    <div class="cart transition is-open">
+      
+      <a href="#" class="btn btn-update">Update cart</a>
+      
+      
+      <div class="table">
+        
+        <div class="layout-inline row th">
+          <div class="col col-pro">Product</div>
+          <div class="col col-price align-center "> 
+            Price
+          </div>
+          <div class="col col-qty align-center">QTY</div>
+          <div class="col">VAT</div>
+          <div class="col">Total</div>
+        </div>
+        
+        <div class="layout-inline row">
+          
+          <div class="col col-pro layout-inline">
+            <img src="http://static.ddmcdn.com/gif/10-kitten-cuteness-1.jpg" alt="kitten" />
+            <p>Happy Little Critter</p>
+          </div>
+          
+          <div class="col col-price col-numeric align-center ">
+            <p>£59.99</p>
+          </div>
+  
+          <div class="col col-qty layout-inline">
+            <a href="#" class="qty qty-minus">-</a>
+              <input type="numeric" value="3" />
+            <a href="#" class="qty qty-plus">+</a>
+          </div>
+          
+          <div class="col col-vat col-numeric">
+            <p>£2.95</p>
+          </div>
+          <div class="col col-total col-numeric">               <p> £182.95</p>
+          </div>
+        </div>
+        
+        <div class="layout-inline row row-bg2">
+  
+          <div class="col col-pro layout-inline">
+            <img src="http://lovemeow.com/wp-content/uploads/2012/05/kitten81.jpg" alt="kitten" />
+            <p>Scared Little Kittie</p>
+          </div>
+          
+          <div class="col col-price col-numeric align-center ">
+            <p>£23.99</p>
+          </div>
+  
+          <div class="col col-qty  layout-inline">
+            <a href="#" class="qty qty-minus ">-</a>
+              <input type="numeric" value="1" />
+            <a href="#" class="qty qty-plus">+</a>
+          </div>
+          
+          <div class="col col-vat col-numeric">
+            <p>£1.95</p>
+          </div>
+          <div class="col col-total col-numeric">
+            <p>£25.94</p>
+         </div>      
+        
+        </div>
+        
+         <div class="layout-inline row">
+          
+          <div class="col col-pro layout-inline">
+            <img src="http://cdn.cutestpaw.com/wp-content/uploads/2012/04/l-my-first-kitten.jpg" alt="kitten" />
+            <p>Curious Little Begger</p>
+          </div>
+          
+          <div class="col col-price col-numeric align-center ">
+            <p>£59.99</p>
+          </div>
+  
+          <div class="col col-qty layout-inline">
+            <a href="#" class="qty qty-minus">-</a>
+              <input type="numeric" value="3" />
+            <a href="#" class="qty qty-plus">+</a>
+          </div>
+          
+          <div class="col col-vat col-numeric">
+            <p>£2.95</p>          
+          </div>
+           <div class="col col-total col-numeric">  
+             <p>£182.95</p>
+           </div>         
+        </div>
+    
+         <div class="tf">
+           <div class="row layout-inline">
+             <div class="col">
+               <p>VAT</p>
+             </div>
+             <div class="col"></div>
+           </div>
+           <div class="row layout-inline">
+             <div class="col">
+               <p>Shipping</p>
+             </div>
+             <div class="col"></div>
+           </div>
+            <div class="row layout-inline">
+             <div class="col">
+               <p>Total</p>
+             </div>
+             <div class="col"></div>
+           </div>
+         </div>         
+    </div>
+      
+      <a href="#" class="btn btn-update">Update cart</a>
+    
+  </div>
+  </div>
+</mat-card>
+
+
+
+<div class="container">
+  <div class="heading">
+    <h1>
+      <span class="shopper">s</span> Shopping Cart
+    </h1>
+    
+    <a href="#" class="visibility-cart transition is-open">X</a>    
+  </div>
+  
+  <div class="cart transition is-open">
+    
+    <a href="#" class="btn btn-update">Update cart</a>
+    
+    
+    <div class="table">
+      
+      <div class="layout-inline row th">
+        <div class="col col-pro">Product</div>
+        <div class="col col-price align-center "> 
+          Price
+        </div>
+        <div class="col col-qty align-center">QTY</div>
+        <div class="col">VAT</div>
+        <div class="col">Total</div>
+      </div>
+      
+      <div class="layout-inline row">
+        
+        <div class="col col-pro layout-inline">
+          <img src="http://static.ddmcdn.com/gif/10-kitten-cuteness-1.jpg" alt="kitten" />
+          <p>Happy Little Critter</p>
+        </div>
+        
+        <div class="col col-price col-numeric align-center ">
+          <p>£59.99</p>
+        </div>
+
+        <div class="col col-qty layout-inline">
+          <a href="#" class="qty qty-minus">-</a>
+            <input type="numeric" value="3" />
+          <a href="#" class="qty qty-plus">+</a>
+        </div>
+        
+        <div class="col col-vat col-numeric">
+          <p>£2.95</p>
+        </div>
+        <div class="col col-total col-numeric">               <p> £182.95</p>
+        </div>
+      </div>
+      
+      
+      
+       <div class="layout-inline row">
+        
+      
+       <div class="tf">
+         <div class="row layout-inline">
+           <div class="col">
+             <p>VAT</p>
+           </div>
+           <div class="col"></div>
+         </div>
+         <div class="row layout-inline">
+           <div class="col">
+             <p>Shipping</p>
+           </div>
+           <div class="col"></div>
+         </div>
+          <div class="row layout-inline">
+           <div class="col">
+             <p>Total</p>
+           </div>
+           <div class="col"></div>
+         </div>
+       </div>         
+  </div>
+    
+    <a href="#" class="btn btn-update">Update cart</a>
+  
+</div>
+
+
+
+<h3>Cart</h3>
+
+
+<p>
+    <a routerLink="/shipping">Shipping Prices</a>
+</p>
+<hr>
+    <div class = "row">
+      <div name = "itemId" class = "cart-item" *ngFor = "let item of items; index as itemId">
+          <span>{{itemId + 1 + ' ' }} {{ item.name}}</span>
+          <span>{{ item.price | currency }}</span>
+          <app-delete [item]  = "itemId">
+          </app-delete>
+      </div>
+  </div>
+  <div *ngFor = "let item of items; index as itemId">
+  <h3> 
+    <a [title]="item.name + ' details'" [routerLink]="['/items',itemId]">
+    {{ item.name }} 
+    </a>
+  </h3>
+    <app-delete
+      [item] = "itemId" (click) = "deleteItem(itemId)">
+</app-delete>
+ </div>
+
+-->
+
+  
+
+
+
+
+
+

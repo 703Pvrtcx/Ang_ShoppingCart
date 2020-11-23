@@ -1,0 +1,28 @@
+<!--<app-top-bar></app-top-bar>-->
+<!-- Toolbar-->
+<mat-toolbar color="primary" class="app-header">
+  <mat-label routerLink ="home">Truxton</mat-label>
+ <a mat-button routerLink ="about" routerLinkActive="active">Admin</a>
+  <a   mat-button mat-raised-button routerLink="cart" routerLinkActive="active">
+         <mat-icon>shopping_cart </mat-icon> Checkout</a>
+  <span class="nav-tool-items">
+
+    <a mat-button routerLink ="sign-in" routerLinkActive="active">Log in</a>
+    <a mat-button mat-raised-button routerLink="register-user" routerLinkActive="active">Register</a>
+  </span>
+
+</mat-toolbar> 
+<app-root></app-root>
+<router-outlet></router-outlet>
+  
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="/__/firebase/7.20.0/firebase-app.js"></script>
+<script src="/__/firebase/7.20.0/firebase-auth.js"></script>
+<script src="/__/firebase/7.20.0/firebase-database.js"></script>
+<script src="/__/firebase/7.20.0/firebase-storage.js"></script>
+<script src="/__/firebase/7.20.0/firebase-hosting.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="/__/firebase/7.20.0/firebase-analytics.js"></script>
+<!-- Initialize Firebase -->
+<script src="/__/firebase/init.js"></script>

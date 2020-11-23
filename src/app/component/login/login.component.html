@@ -1,0 +1,38 @@
+
+<!-- <div class= "containter">        
+    <div class="card highlight-card card-small">
+        <h2>Please signin</h2><hr>   
+    </div>
+    <hr>
+      
+    <label>Create New User</label><br>
+        <button (click) = "createNewUser()">Create</button><br>
+        <label>Google Authentication</label><br>
+        <button (click) = "signinUser()">SignIn</button><hr>
+        <button (click)= "signinFb()">Facebook</button><br>
+        <button (click) = "signinPh()">Phone</button> <br>
+        <button (click) = "signinGm()">Gmail</button>  <br>
+        <hr>
+        <button click = "googleSignin()">Google Signin</button>
+        <button click = "googleSignout()">Google Signout</button>
+   
+    <form style ="float: center;" [formGroup] = "loginForm" (ngSubmit) = "formSubmit(loginForm)">
+        <label >Email</label>
+        <br>
+        <div *ngIf = "loginForm.controls.email.invalid && loginForm.controls.email.dirty"></div>
+            *Please provide email
+        <input placeholder="email" formControlName="email" required>
+        <br>
+        <label>PassWord</label>
+        <br>
+        <div *ngIf = "loginForm.controls.password.invalid && loginForm.controls.password.dirty"></div>
+            *Please provide password
+        <input  placeholder="password" formControlName= "password" required>
+        <hr>
+        <button type ="submit" [disabled] = "loginForm.invalid" >Submit</button>
+    </form>
+</div>   -->
+
+
+
+

@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: DodgerBlue;
+  }
+  
+  .flex-container > div {
+    background-color: #f1f1f1;
+    width: 100px;
+    margin: 10px;
+    text-align: center;
+    line-height: 150px;
+    width: 150px;
+    font-size: 14px;
+    border: 3px solid #a0a0a0;
+  }
+  /* Add a gray background color with some padding */
+  body {
+    font-family: Arial;
+    padding: 20px;
+    background-color: #1976d2;
+  }
+  
+  /* Header/Blog Title */
+  .header {
+    padding: 30px;
+    font-size: 40px;
+    text-align: center;
+    background: white;
+  }
+  
+  /* Create two unequal columns that floats next to each other */
+  /* Left column */
+  .leftcolumn {
+    float: left;
+    left: 10Px;;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(3, 128, 245);
+    padding-left: 10px;
+      
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+  }
+  
+  /* Right column */
+  .rightcolumn {
+    float: left;
+    width: 20%;
+    padding-left: 20px;
+    background-color: rgb(3, 128, 245);
+    //display: flex;
+    flex-direction: row;
+  //  justify-content: space-between;
+  
+  }
+  
+  /* Fake image */
+  .fakeimg {
+    background-color: #aaa;
+    width: 100%;
+    padding: 20px;
+  
+  }
+  
+  /* Add a card effect for articles */
+  .card {
+     background-color: white;
+     padding: 20px;
+     margin: 20px;
+     display: flex;
+     justify-content: space-between;
+  
+   // grid-auto-rows: 100px;
+  }
+  .cardr {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    flex-direction: row;
+   // display: flex;
+    //justify-content: space-between;
+  }
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Footer */
+  .footer {
+   // padding: 0;
+  
+    padding: 20px;
+    text-align: center;
+    background: #ddd;
+    margin-top: 20px;
+  }
+  app-top-bar h1 {
+    color: white;
+    margin: 10px;
+  }
+  body, html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+  }
+  
+  body {
+  display: flex;
+  flex-direction: column;
+  }
+  
+  .flex-column {
+  display: flex;
+  flex-direction: column;
+  }
+  
+  .flex-row {
+  display: flex;
+  flex-direction: row;
+  }
+  
+  .flex {
+  flex: 1 1 0%;
+  }
+  
+  .flex-100 {
+  flex: 1 1 100%;
+  }
+  
+  sidebar {
+  min-width: 300px;
+  background: #FFFE55;
+  padding: 30px;
+  height: 100%;
+  }
+  
+  header {
+    background: #70FBFD;
+    padding: 30px;
+  }
+  
+  footer {
+  background: #5786E1;
+  padding: 30px;
+  }
+  
+  dashboard, login, users {
+  background: #71FA4C;
+  padding: 30px;
+  height: 100%;
+  }
+  
+  mat-card {
+      max-height: 600px;
+      background: #d1cece ;
+      margin-top: 100px;
+      //margin-bottom: 100px;
+
+      padding-top: 100px;
+      padding-bottom: 100px;
+      padding-left: 60px;
+      padding-right: 80px;
+      margin: 2em auto;
+      text-align: center;
+      font-size: medium;
+    }
+    mat-form-field {
+      display: block;
+    }
+  /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {
+      width: 100%;
+      padding: 0;
+    }
+  }

@@ -1,0 +1,41 @@
+
+<mat-card style = "margin-top: 100px;" >
+    <input type = 'file' (change) = "uploadFile($event)" >
+    <div> {{ uploadPercentage | async }} %</div>
+    <a [href] = "downloadURL | async">{{ downloadURL | async }}</a>
+    <mat-card style = "margin-top: 10px; width: 50%;">
+      <mat-card-content >
+             <mat-progress-bar [value] = "(uploadPercentage |async)"></mat-progress-bar>
+              <label [className] = "(uploadPercentage |async)"> {{uploadPercentage |async}} %</label>
+              <span id = "(uploadPercentage |async)"></span>
+      </mat-card-content>
+    </mat-card>
+        <mat-card>
+      
+          <mat-form-field>
+              <mat-label color = "primary"> Choose Device</mat-label>
+                    <mat-select>
+                      <mat-option value="Android">Android</mat-option>
+                      <mat-option value="iOS">iOS</mat-option>
+                      <mat-option value="Windows">Windows</mat-option>
+                    </mat-select>
+              </mat-form-field>
+        </mat-card>
+        <mat-card>
+          <mat-form-field>
+              <mat-label color = "primary">Choose Price</mat-label>
+                    <mat-select>
+                      <mat-option value="1999">R 2000.00</mat-option>
+                      <mat-option value="6999">R 7000.00</mat-option>
+                      <mat-option value="19990">R 20000.00</mat-option>
+                    </mat-select>
+              </mat-form-field>
+        </mat-card>
+        <mat-card style = "margin-top: 10px; width: 50%;">
+          <mat-card-actions>
+            <button mat-button color= "warn"  (click) = "onClick()">
+              <mat-icon>file_upload</mat-icon>Upload
+            </button>
+          </mat-card-actions>
+        </mat-card> 
+</mat-card>
